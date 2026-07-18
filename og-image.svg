@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Tensoramax — AI Safety & Research Laboratory">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FBF7EF"/>
+      <stop offset="1" stop-color="#F1E8D9"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.18" r="0.6">
+      <stop offset="0" stop-color="#E07A4E" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#E07A4E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="og" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#EA8B5E"/>
+      <stop offset="1" stop-color="#C25A2C"/>
+    </linearGradient>
+  </defs>
+
+  <!-- background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- decorative neural network, top-right -->
+  <g stroke="#E07A4E" stroke-width="1.5" opacity="0.35">
+    <line x1="880" y1="150" x2="1000" y2="110"/>
+    <line x1="880" y1="150" x2="1020" y2="200"/>
+    <line x1="940" y1="250" x2="1000" y2="110"/>
+    <line x1="940" y1="250" x2="1020" y2="200"/>
+    <line x1="940" y1="250" x2="1070" y2="300"/>
+    <line x1="820" y1="300" x2="940" y2="250"/>
+    <line x1="820" y1="300" x2="1070" y2="300"/>
+    <line x1="1000" y1="110" x2="1100" y2="170"/>
+    <line x1="1020" y1="200" x2="1100" y2="170"/>
+    <line x1="1070" y1="300" x2="1100" y2="170"/>
+  </g>
+  <g fill="url(#og)">
+    <circle cx="880" cy="150" r="9"/>
+    <circle cx="940" cy="250" r="9"/>
+    <circle cx="820" cy="300" r="7" opacity="0.7"/>
+    <circle cx="1000" cy="110" r="7" opacity="0.8"/>
+    <circle cx="1020" cy="200" r="7" opacity="0.8"/>
+    <circle cx="1070" cy="300" r="7" opacity="0.8"/>
+  </g>
+  <circle cx="1100" cy="170" r="16" fill="none" stroke="url(#og)" stroke-width="3"/>
+  <circle cx="1100" cy="170" r="8" fill="url(#og)"/>
+
+  <!-- brand mark -->
+  <g transform="translate(96,96)">
+    <rect width="64" height="64" rx="18" fill="#1C1916"/>
+    <path d="M19 22h26M19 32h26M19 42h26" stroke="#E07A4E" stroke-width="2.4" stroke-linecap="round" opacity="0.5"/>
+    <circle cx="19" cy="22" r="4.2" fill="#E07A4E"/><circle cx="45" cy="22" r="4.2" fill="#F7E2D3"/>
+    <circle cx="32" cy="32" r="5" fill="none" stroke="#E07A4E" stroke-width="3"/><circle cx="32" cy="32" r="2.4" fill="#E07A4E"/>
+    <circle cx="19" cy="42" r="4.2" fill="#F7E2D3"/><circle cx="45" cy="42" r="4.2" fill="#E07A4E"/>
+  </g>
+  <text x="180" y="142" font-family="Fraunces, Georgia, serif" font-size="34" fill="#332E28" font-weight="500">Tensoramax</text>
+  <text x="180" y="166" font-family="'JetBrains Mono', monospace" font-size="13" fill="#9A8F7F" letter-spacing="3">SAFETY · RESEARCH LAB</text>
+
+  <!-- headline -->
+  <text x="96" y="340" font-family="Fraunces, Georgia, serif" font-size="92" fill="#1C1916" font-weight="360" letter-spacing="-2">Mapping the frontier</text>
+  <text x="96" y="430" font-family="Fraunces, Georgia, serif" font-size="92" font-weight="360" letter-spacing="-2">
+    <tspan fill="#1C1916">of </tspan><tspan fill="#C25A2C" font-style="italic">safe</tspan><tspan fill="#1C1916"> intelligence.</tspan>
+  </text>
+
+  <!-- tagline -->
+  <text x="98" y="500" font-family="Inter, Arial, sans-serif" font-size="26" fill="#756B5E">AI Safety · Benchmarking · Model Evaluation · Open Research</text>
+
+  <!-- accent rule + domain -->
+  <rect x="98" y="540" width="70" height="4" rx="2" fill="url(#og)"/>
+  <text x="98" y="582" font-family="'JetBrains Mono', monospace" font-size="20" fill="#332E28" letter-spacing="1">tensoramax.me</text>
+</svg>

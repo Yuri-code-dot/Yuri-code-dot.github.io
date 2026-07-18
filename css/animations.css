@@ -1,0 +1,158 @@
+/* ============================================================
+   Tensoramax — animations.css
+   Keyframes, scroll reveals, micro-interactions
+   ============================================================ */
+
+/* ---------- Keyframes ---------- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(34px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  33% { transform: translateY(-18px) translateX(8px); }
+  66% { transform: translateY(8px) translateX(-10px); }
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes livePulse {
+  0% { box-shadow: 0 0 0 0 rgba(78,138,90,.5); }
+  70% { box-shadow: 0 0 0 9px rgba(78,138,90,0); }
+  100% { box-shadow: 0 0 0 0 rgba(78,138,90,0); }
+}
+@keyframes scrollDot {
+  0% { opacity: 0; transform: translate(-50%, 0); }
+  35% { opacity: 1; }
+  70% { opacity: 1; transform: translate(-50%, 12px); }
+  100% { opacity: 0; transform: translate(-50%, 16px); }
+}
+@keyframes drawLine {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes dashFlow {
+  to { stroke-dashoffset: -1000; }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes ringGlow {
+  0%, 100% { filter: drop-shadow(0 0 0 rgba(224,122,78,0)); }
+  50% { filter: drop-shadow(0 0 8px rgba(224,122,78,.45)); }
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ---------- Scroll reveal system ---------- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity .9s var(--ease), transform .9s var(--ease);
+  will-change: opacity, transform;
+}
+[data-reveal="fade"] { transform: none; }
+[data-reveal="scale"] { transform: scale(.93); }
+[data-reveal="left"] { transform: translateX(-44px); }
+[data-reveal="right"] { transform: translateX(44px); }
+[data-reveal].in-view {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger via inline --i delay on children */
+[data-reveal] { transition-delay: calc(var(--i, 0) * 90ms); }
+
+/* Initial hero entrance (plays on load, no observer needed) */
+.hero [data-anim] { opacity: 0; animation: fadeUp 1s var(--ease) forwards; }
+.hero [data-anim="1"] { animation-delay: .1s; }
+.hero [data-anim="2"] { animation-delay: .28s; }
+.hero [data-anim="3"] { animation-delay: .46s; }
+.hero [data-anim="4"] { animation-delay: .64s; }
+.hero [data-anim="5"] { animation-delay: .82s; }
+
+/* ---------- Counters ---------- */
+.counter { display: inline-block; }
+
+/* ---------- SVG score ring ---------- */
+.ring-track { stroke: var(--cream-3); }
+.ring-fill {
+  stroke: var(--orange);
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  transition: stroke-dashoffset 1.6s var(--ease);
+}
+.ring-fill.ok { stroke: var(--ok); }
+.ring-fill.warn { stroke: var(--warn); }
+.ring-fill.bad { stroke: var(--bad); }
+
+/* Underline draw on headings */
+.underline-draw {
+  background-image: linear-gradient(var(--orange), var(--orange));
+  background-size: 0% .08em;
+  background-position: 0 92%;
+  background-repeat: no-repeat;
+  transition: background-size 1.1s var(--ease) .25s;
+}
+.in-view .underline-draw, .underline-draw.drawn { background-size: 100% .08em; }
+
+/* Marquee / ticker row */
+.ticker-wrap { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
+.ticker-track {
+  display: flex; gap: 56px; width: max-content;
+  animation: ticker 38s linear infinite;
+}
+.ticker-wrap:hover .ticker-track { animation-play-state: paused; }
+.ticker-track span {
+  font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.4rem);
+  color: var(--muted-2); white-space: nowrap; display: inline-flex; align-items: center; gap: 56px;
+}
+.ticker-track span::after { content: "✦"; color: var(--orange); font-size: .6em; }
+
+/* Floating decoration */
+.float { animation: float 6s ease-in-out infinite; }
+.float-delay { animation-delay: -2s; }
+
+/* Hover lift utility for interactive tiles */
+.lift { transition: transform .45s var(--ease), box-shadow .45s var(--ease); }
+.lift:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+
+/* Button shine */
+.btn { overflow: hidden; }
+.btn::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.25), transparent 70%);
+  transform: translateX(-120%); transition: transform .8s var(--ease);
+}
+.btn:hover::after { transform: translateX(120%); }
+
+/* Loading shimmer skeleton */
+.skeleton {
+  background: linear-gradient(90deg, var(--cream-2) 25%, var(--cream-3) 50%, var(--cream-2) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite;
+}
+
+/* Pulse dot generic */
+.pulse-dot { animation: ringGlow 3s ease-in-out infinite; }
+
+/* Reduced motion: disable all decorative animation */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .hero [data-anim] { opacity: 1 !important; animation: none !important; }
+  .float, .ticker-track, .pulse-dot, .scroll-cue .mouse::after { animation: none !important; }
+  .ring-fill { transition: none !important; }
+}
