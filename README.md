@@ -81,6 +81,14 @@ npx serve .
 
 Then visit `http://localhost:8000`.
 
+### Validate benchmark models data
+
+When `assets/models.json` is updated, run:
+
+```bash
+node tools/validate-models.js
+```
+
 ---
 
 ## 🌐 Deploying to GitHub Pages
