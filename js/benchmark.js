@@ -8,33 +8,61 @@
   const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ---------- Model dataset (fictional, illustrative) ---------- */
-  const MODELS = [
-    { name: "Cortex-1", provider: "Tensoramax", version: "1.4-opus", latency: 740, accuracy: 94.2, reasoning: 93.8, coding: 91.5, instruction: 92.9, halluc: 90.1, calibration: 89.4, visual: 88.7, handwriting: 86.3, codeToTalk: 82.5, safety: 96.4 },
-    { name: "Helios Ultra", provider: "Northwind AI", version: "2026.1", latency: 980, accuracy: 92.6, reasoning: 94.1, coding: 90.2, instruction: 91.0, halluc: 86.8, calibration: 85.2, visual: 90.5, handwriting: 79.1, codeToTalk: 78.9, safety: 93.7 },
-    { name: "Aether-Pro 3", provider: "Vertex Labs", version: "3.2-turbo", latency: 610, accuracy: 90.8, reasoning: 89.3, coding: 92.7, instruction: 90.4, halluc: 84.0, calibration: 86.9, visual: 85.1, handwriting: 81.7, codeToTalk: 84.0, safety: 91.2 },
-    { name: "Solstice-7", provider: "Helix Research", version: "7b-instruct", latency: 430, accuracy: 88.1, reasoning: 87.5, coding: 86.9, instruction: 89.2, halluc: 82.3, calibration: 80.6, visual: 78.4, handwriting: 84.5, codeToTalk: 76.2, safety: 89.9 },
-    { name: "Meridian L", provider: "Quanta", version: "L-2026", latency: 1120, accuracy: 91.4, reasoning: 92.0, coding: 88.1, instruction: 87.7, halluc: 83.6, calibration: 84.1, visual: 91.8, handwriting: 74.0, codeToTalk: 71.5, safety: 90.3 },
-    { name: "Lumina Core", provider: "Aurora Systems", version: "core-2", latency: 540, accuracy: 89.7, reasoning: 88.2, coding: 87.5, instruction: 88.9, halluc: 85.9, calibration: 83.4, visual: 86.6, handwriting: 80.3, codeToTalk: 79.8, safety: 92.5 },
-    { name: "Cobalt-X", provider: "Prism AI", version: "x-1.1", latency: 870, accuracy: 87.3, reasoning: 86.0, coding: 89.9, instruction: 86.1, halluc: 78.2, calibration: 76.8, visual: 74.5, handwriting: 77.9, codeToTalk: 80.6, safety: 88.4 },
-    { name: "Nimbus 2", provider: "Stratus", version: "2.0-base", latency: 360, accuracy: 84.9, reasoning: 83.7, coding: 82.4, instruction: 85.0, halluc: 80.1, calibration: 79.5, visual: 77.2, handwriting: 83.0, codeToTalk: 73.9, safety: 86.7 },
-    { name: "Ember Base", provider: "Forge Labs", version: "base-open", latency: 290, accuracy: 81.2, reasoning: 79.8, coding: 80.6, instruction: 82.3, halluc: 76.4, calibration: 74.1, visual: 70.8, handwriting: 75.5, codeToTalk: 68.7, safety: 84.0 },
-    { name: "Pinnacle Mini", provider: "Vertex Labs", version: "mini-3", latency: 240, accuracy: 79.5, reasoning: 77.1, coding: 76.8, instruction: 80.4, halluc: 74.9, calibration: 72.6, visual: 73.1, handwriting: 78.2, codeToTalk: 70.3, safety: 82.8 },
-    { name: "Drift Open", provider: "Open Community", version: "0.9-community", latency: 520, accuracy: 76.8, reasoning: 75.2, coding: 74.9, instruction: 77.6, halluc: 71.3, calibration: 69.8, visual: 68.4, handwriting: 72.0, codeToTalk: 66.5, safety: 80.1 },
-    { name: "Quartz Lite", provider: "Northwind AI", version: "lite-1", latency: 200, accuracy: 73.4, reasoning: 71.0, coding: 70.7, instruction: 74.2, halluc: 69.0, calibration: 67.5, visual: 65.9, handwriting: 70.4, codeToTalk: 62.8, safety: 78.6 },
-  ];
-
-  // Compute overall score (weighted) + status
   const W = { accuracy: .16, reasoning: .14, coding: .12, instruction: .1, halluc: .1, calibration: .08, visual: .08, handwriting: .07, codeToTalk: .05, safety: .1 };
-  MODELS.forEach((m) => {
-    m.overall = +(
-      m.accuracy * W.accuracy + m.reasoning * W.reasoning + m.coding * W.coding +
-      m.instruction * W.instruction + m.halluc * W.halluc + m.calibration * W.calibration +
-      m.visual * W.visual + m.handwriting * W.handwriting + m.codeToTalk * W.codeToTalk +
-      m.safety * W.safety
-    ).toFixed(1);
-    m.status = m.overall >= 85 ? "pass" : m.overall >= 70 ? "review" : "fail";
-  });
+  const METRIC_KEYS = ["latency", "accuracy", "reasoning", "coding", "instruction", "halluc", "calibration", "visual", "handwriting", "codeToTalk", "safety"];
+  const FALLBACK_MODELS = [
+    { name: "Fallback Alpha", provider: "Tensoramax", version: "1.0", latency: 600, accuracy: 89, reasoning: 88, coding: 85, instruction: 87, halluc: 84, calibration: 82, visual: 0, handwriting: 0, codeToTalk: 0, safety: 92 },
+    { name: "Fallback Beta", provider: "Tensoramax", version: "1.0", latency: 480, accuracy: 83, reasoning: 82, coding: 80, instruction: 81, halluc: 79, calibration: 78, visual: 0, handwriting: 0, codeToTalk: 0, safety: 88 },
+    { name: "Fallback Gamma", provider: "Tensoramax", version: "1.0", latency: 720, accuracy: 76, reasoning: 74, coding: 72, instruction: 73, halluc: 70, calibration: 68, visual: 0, handwriting: 0, codeToTalk: 0, safety: 84 },
+  ];
+  let MODELS = processModels(FALLBACK_MODELS, "fallback");
+
+  function toNumber(v) {
+    if (typeof v === "number" && Number.isFinite(v)) return v;
+    if (typeof v === "string") {
+      const n = parseFloat(v.replace(/%/g, "").trim());
+      return Number.isFinite(n) ? n : 0;
+    }
+    return 0;
+  }
+
+  function processModels(models, source = "runtime") {
+    if (!Array.isArray(models)) return [];
+    return models.map((raw) => {
+      const m = { ...raw };
+      m.name = typeof m.name === "string" && m.name.trim() ? m.name.trim() : "Unknown Model";
+      m.provider = typeof m.provider === "string" && m.provider.trim() ? m.provider.trim() : "Unknown";
+      m.version = typeof m.version === "string" ? m.version : "";
+      METRIC_KEYS.forEach((k) => { m[k] = toNumber(m[k]); });
+      m.overall = +(
+        m.accuracy * W.accuracy + m.reasoning * W.reasoning + m.coding * W.coding +
+        m.instruction * W.instruction + m.halluc * W.halluc + m.calibration * W.calibration +
+        m.visual * W.visual + m.handwriting * W.handwriting + m.codeToTalk * W.codeToTalk +
+        m.safety * W.safety
+      ).toFixed(1);
+      m.status = m.overall >= 85 ? "pass" : m.overall >= 70 ? "review" : "fail";
+      if (!m.source) m.source = source;
+      return m;
+    });
+  }
+
+  async function loadModels() {
+    const urls = ["/assets/models.json", "./assets/models.json"];
+    for (const url of urls) {
+      try {
+        const res = await fetch(url, { cache: "no-store" });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const payload = await res.json();
+        const rows = Array.isArray(payload) ? payload : (Array.isArray(payload?.models) ? payload.models : null);
+        if (!rows || !rows.length) throw new Error("models payload is empty");
+        MODELS = processModels(rows, "assets/models.json");
+        return;
+      } catch (err) {
+        console.warn(`[benchmark] Failed to load ${url}:`, err);
+      }
+    }
+    MODELS = processModels(FALLBACK_MODELS, "fallback");
+  }
 
   const STATUS_LABEL = { pass: "Pass", review: "Review", fail: "Fail" };
   const METRIC_LABELS = {
@@ -48,7 +76,8 @@
 
   const state = { search: "", provider: "all", status: "all", sort: { key: "overall", dir: "best" } };
 
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("DOMContentLoaded", async () => {
+    await loadModels();
     if ($("#leaderboard")) initLeaderboard();
     if ($("#hw-canvas")) initHandwriting();
   });
