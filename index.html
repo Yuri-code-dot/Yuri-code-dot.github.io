@@ -4,21 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script>(function(){try{var t=localStorage.getItem('tm-theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme',window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}})();</script>
-  <title>Tensoramax — AI Safety & Research Laboratory</title>
-  <meta name="description" content="Tensoramax is an independent AI research laboratory measuring how large models reason, fail, and behave — advancing AI safety, benchmarking, evaluation, and transparency." />
+  <title>Tensoramax — Practical AI Ecosystem</title>
+  <meta name="description" content="Tensoramax Lab is building practical AI products including Tensora Curious, Maku AI, benchmark infrastructure, and open research tools for developers." />
   <meta name="theme-color" content="#F6F0E6" />
-<meta name="author" content="Tensoramax Research" />
-<link rel="canonical" href="https://tensoramax.me/" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://tensoramax.me/" />
-<meta property="og:site_name" content="Tensoramax" />
-<meta property="og:title" content="Tensoramax — AI Safety & Research Laboratory" />
-<meta property="og:description" content="Independent AI research laboratory measuring how large models reason, fail, and behave — advancing AI safety, benchmarking, and transparency through open methods." />
-<meta property="og:image" content="https://tensoramax.me/og-image.svg" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Tensoramax — AI Safety & Research Laboratory" />
-<meta name="twitter:description" content="An independent AI research lab advancing safety, benchmarking, and transparency." />
-<meta name="twitter:image" content="https://tensoramax.me/og-image.svg" />
+  <meta name="author" content="Tensoramax Lab" />
+  <link rel="canonical" href="https://tensoramax.me/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tensoramax.me/" />
+  <meta property="og:site_name" content="Tensoramax" />
+  <meta property="og:title" content="Tensoramax — Practical AI Ecosystem" />
+  <meta property="og:description" content="Products, research, and developer tools from Tensoramax Lab — including Tensora Curious and the Benchmark Suite." />
+  <meta property="og:image" content="https://tensoramax.me/og-image.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tensoramax — Practical AI Ecosystem" />
+  <meta name="twitter:description" content="Build, learn, and ship with Tensoramax Lab products and open AI infrastructure." />
+  <meta name="twitter:image" content="https://tensoramax.me/og-image.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -30,7 +30,6 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="scroll-progress" aria-hidden="true"></div>
 
-  <!-- ================= NAV ================= -->
   <header class="nav" id="nav">
     <div class="container nav-inner">
       <a class="brand" href="index.html" aria-label="Tensoramax home">
@@ -49,284 +48,143 @@
       <nav class="nav-links" aria-label="Primary">
         <a href="research.html">Research</a>
         <a href="benchmark.html">Benchmark</a>
-        <a href="papers.html">Papers</a>
-        <a href="documentation.html">Docs</a>
+        <a href="index.html#ecosystem">Products</a>
+        <a href="tsc.html">TSC</a>
         <a href="about.html">About</a>
-        <a href="faq.html">FAQ</a>
       </nav>
       <div class="nav-cta">
         <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark / light theme"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg></button>
-        <a class="btn btn-sm btn-ghost" href="legal.html">Legal</a>
-        <a class="btn btn-sm btn-primary" href="https://github.com" target="_blank" rel="noopener">
-          GitHub <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 .1.5 2.8 2.9 2 .1-.7.4-1.2.7-1.5-2.5-.3-5.2-1.3-5.2-5.8 0-1.3.5-2.4 1.2-3.3-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.4 1.2 1-.3 2-.5 3-.5s2.1.2 3 .5C17.9 3 19 3.3 19 3.3c.6 1.7.2 2.9.1 3.2.8.9 1.2 2 1.2 3.3 0 4.5-2.7 5.5-5.2 5.8.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.5A11.5 11.5 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5Z"/></svg>
-        </a>
+        <a class="btn btn-sm btn-ghost" href="login.html">Login</a>
+        <a class="btn btn-sm btn-primary" href="https://github.com" target="_blank" rel="noopener">GitHub</a>
         <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span></button>
       </div>
     </div>
   </header>
 
-  <!-- mobile menu -->
   <nav class="mobile-menu" aria-label="Mobile">
     <a href="research.html">Research</a>
     <a href="benchmark.html">Benchmark</a>
     <a href="papers.html">Papers</a>
     <a href="documentation.html">Docs</a>
+    <a href="index.html#ecosystem">Products</a>
+    <a href="tsc.html">TSC</a>
+    <a href="login.html">Login</a>
     <a href="about.html">About</a>
     <a href="faq.html">FAQ</a>
-    <a href="legal.html">Legal</a>
   </nav>
 
   <main id="main">
-    <!-- ================= HERO ================= -->
     <section class="hero" aria-labelledby="hero-title" aria-describedby="hero-summary hero-trust">
       <canvas class="hero-canvas" id="hero-network" aria-hidden="true"></canvas>
       <div class="hero-glow" aria-hidden="true"></div>
       <div class="particles" data-count="16" aria-hidden="true"></div>
       <div class="container hero-content">
-        <span class="eyebrow" data-anim="1">Independent AI Safety &amp; Research Laboratory</span>
-        <h1 class="display" id="hero-title" data-anim="2">Measure AI risk with <span class="accent">open</span> scientific rigor.</h1>
-        <p class="lead hero-lead" id="hero-summary" data-anim="3">Tensoramax Lab helps engineering teams evaluate advanced AI systems with repeatable evidence. <strong>Tensora Curious (TSC)</strong> turns safety, robustness, and accountability checks into transparent workflows that teams can audit and reproduce.</p>
-
+        <span class="eyebrow" data-anim="1">Tensoramax Lab · Practical AI Ecosystem</span>
+        <h1 class="display" id="hero-title" data-anim="2">Building AI products people can <span class="accent">use</span> today.</h1>
+        <p class="lead hero-lead" id="hero-summary" data-anim="3">Tensoramax Lab exists to turn frontier AI research into practical tools. We build <strong>Tensora Curious</strong>, Maku AI, open benchmark infrastructure, and transparent research systems for developers, students, researchers, and creators.</p>
         <ul class="hero-meta" data-anim="4" aria-label="Lab trust signals">
-          <li><i class="dot" aria-hidden="true"></i><span>Est. 2024</span></li>
-          <li><i class="dot" aria-hidden="true"></i><span>Independent R&amp;D Lab</span></li>
-          <li><i class="dot" aria-hidden="true"></i><span>Open Evaluation Protocols</span></li>
-          <li><i class="dot" aria-hidden="true"></i><span>12,480 Probes per Suite</span></li>
+          <li><i class="dot" aria-hidden="true"></i><span>Tensora Curious · Private Beta</span></li>
+          <li><i class="dot" aria-hidden="true"></i><span>Benchmark Suite · Available</span></li>
+          <li><i class="dot" aria-hidden="true"></i><span>Maku AI · Coming Soon</span></li>
+          <li><i class="dot" aria-hidden="true"></i><span>Developer-first platform roadmap</span></li>
         </ul>
-
         <div class="hero-actions" data-anim="5" role="group" aria-label="Primary actions">
-          <a class="btn btn-primary" href="documentation.html" aria-label="Open Tensora Curious documentation">Read TSC Documentation
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-          <a class="btn btn-orange" href="benchmark.html" aria-label="Open public benchmark dashboard">See Live Benchmarks
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3v18h18M7 14l3-3 3 3 5-6"/></svg>
-          </a>
-          <a class="btn btn-ghost" href="research.html" aria-label="Review research methodology and program">Review Methodology
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
+          <a class="btn btn-primary" href="tsc.html">Learn about TSC <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-orange" href="benchmark.html">Explore Benchmarks <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-ghost" href="login.html">Join private beta <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
-
-        <p class="hero-trust" id="hero-trust" data-anim="6">Built for developer trust with <a class="text-link" href="documentation.html">reproducible documentation</a>, <a class="text-link" href="benchmark.html">transparent benchmark reporting</a>, and public research notes for every major release.</p>
+        <p class="hero-trust" id="hero-trust" data-anim="6">What is Tensoramax? A product-focused AI lab. Why does it exist? To make advanced intelligence practical, safe, and reproducible. What can you use now? TSC private beta and the public Benchmark Suite. What is next? Arena, Studio, Agents, APIs, and Vision.</p>
       </div>
-      <div class="scroll-cue" aria-hidden="true">
-        <div class="mouse"></div>
-        <span>Scroll</span>
-      </div>
+      <div class="scroll-cue" aria-hidden="true"><div class="mouse"></div><span>Scroll</span></div>
     </section>
 
-    <!-- ================= ABOUT ================= -->
-    <section class="section" id="about">
-      <div class="container">
-        <div class="split-head">
-          <div data-reveal>
-            <span class="eyebrow">About the laboratory</span>
-            <h2>A research institution, not a product.</h2>
-          </div>
-          <div data-reveal style="--i:1">
-            <p>Tensoramax exists to subject advanced AI to disciplined, repeatable scrutiny. We treat models as instruments to be calibrated — publishing the methods, failures, and data behind every claim.</p>
-          </div>
-        </div>
-        <div class="stat-band" data-reveal>
-          <div class="stat"><div class="stat-num"><span class="counter" data-count="12">0</span><span class="unit">k+</span></div><div class="stat-label">Evaluation probes</div></div>
-          <div class="stat"><div class="stat-num"><span class="counter" data-count="48">0</span></div><div class="stat-label">Models benchmarked</div></div>
-          <div class="stat"><div class="stat-num"><span class="counter" data-count="7">0</span></div><div class="stat-label">Research domains</div></div>
-          <div class="stat"><div class="stat-num"><span class="counter" data-count="100" data-suffix="%">0</span></div><div class="stat-label">Open &amp; reproducible</div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= MISSION ================= -->
-    <section class="section" id="mission">
-      <div class="container">
-        <div class="editorial">
-          <div class="ed-media" data-reveal="left">
-            <svg viewBox="0 0 400 360" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="background:linear-gradient(160deg,#F1E8D9,#F6F0E6)">
-              <defs><linearGradient id="og" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E07A4E"/><stop offset="1" stop-color="#C25A2C"/></linearGradient></defs>
-              <g stroke="#E07A4E" stroke-width="1" opacity=".4">
-                <line x1="80" y1="80" x2="200" y2="180"/><line x1="80" y1="180" x2="200" y2="180"/><line x1="320" y1="120" x2="200" y2="180"/><line x1="320" y1="260" x2="200" y2="180"/><line x1="120" y1="290" x2="200" y2="180"/>
-              </g>
-              <g fill="url(#og)">
-                <circle cx="80" cy="80" r="10"/><circle cx="320" cy="120" r="10"/><circle cx="80" cy="180" r="10"/><circle cx="320" cy="260" r="10"/><circle cx="120" cy="290" r="10"/>
-              </g>
-              <circle cx="200" cy="180" r="26" fill="none" stroke="url(#og)" stroke-width="3"><animate attributeName="r" values="26;34;26" dur="4s" repeatCount="indefinite"/></circle>
-              <circle cx="200" cy="180" r="12" fill="url(#og)"/>
-              <text x="200" y="330" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#756B5E" letter-spacing="3">CALIBRATION GRAPH</text>
-            </svg>
-          </div>
-          <div class="ed-text" data-reveal="right">
-            <span class="eyebrow">Our mission</span>
-            <h2>Make advanced AI measurable before it is consequential.</h2>
-            <p>Capabilities are accelerating faster than our ability to understand them. Our mission is to close that gap — building the scientific scaffolding that lets society trust, verify, and govern intelligence systems with evidence.</p>
-            <ul class="ed-bullets">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Reproducible by design.</strong> Every benchmark ships with transparent methods, open prompts, and full scoring logic.</span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Failure-first.</strong> We hunt for the edges where models look confident but break under pressure.</span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Independent.</strong> No equity, no alignment to any single model vendor, no hidden evaluation criteria.</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= RESEARCH AREAS ================= -->
-    <section class="section" id="research" style="background:var(--paper);border-block:1px solid var(--line)">
+    <section class="section" id="ecosystem">
       <div class="container">
         <div class="section-head" data-reveal>
-          <span class="eyebrow">Research areas</span>
-          <h2>Seven domains, one standard of rigor.</h2>
-          <p>Our work spans the full lifecycle of a model — from how it reasons to how it is governed. Each domain feeds the others, and all of it is open.</p>
+          <span class="eyebrow">Meet the Tensoramax Ecosystem</span>
+          <h2>Building the future of practical AI.</h2>
+          <p>Tensoramax Lab develops intelligent tools that help developers, students, researchers, creators, and open-source communities build, learn, and innovate.</p>
         </div>
-        <div class="grid grid-3">
-          <article class="card area-card" data-reveal><span class="area-id">01</span><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 18l6-6 4 4 6-8"/></svg></div><h3>Alignment drift detection</h3><p>How policy compliance degrades under long conversational horizons and adversarial framing.</p><div class="tags"><span class="tag">Behavior</span><span class="tag">Safety</span></div></article>
-          <article class="card area-card" data-reveal style="--i:1"><span class="area-id">02</span><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 3"/></svg></div><h3>Temporal robustness</h3><p>Model reliability when prompts evolve over time and context windows accumulate contradictory state.</p><div class="tags"><span class="tag">Long context</span><span class="tag">Robustness</span></div></article>
-          <article class="card area-card" data-reveal style="--i:2"><span class="area-id">03</span><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h18M12 3v18"/></svg></div><h3>Reasoning calibration</h3><p>Confidence–accuracy calibration under distribution shift, perturbation, and sparse-ground-truth tasks.</p><div class="tags"><span class="tag">Calibration</span><span class="tag">Eval</span></div></article>
-          <article class="card area-card" data-reveal><span class="area-id">04</span><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V10l8-6 8 6v10"/></svg></div><h3>Multimodal integrity</h3><p>Stress-testing fusion systems across vision, text, and low-resource modalities for brittle failure points.</p><div class="tags"><span class="tag">Multimodal</span><span class="tag">Integrity</span></div></article>
-          <article class="card area-card" data-reveal style="--i:1"><span class="area-id">05</span><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16v12H4z"/><path d="M8 10h8M8 14h5"/></svg></div><h3>Code reliability</h3><p>Measuring executable correctness, explanation fidelity, and failure recovery in engineering workflows.</p><div class="tags"><span class="tag">Code</span><span class="tag">Agents</span></div></article>
-          <article class="card area-card" data-reveal style="--i:2"><span class="area-id">06</span><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M3 12h18"/></svg></div><h3>Interpretability probes</h3><p>Attribution and circuit-level analyses that pair performance scores with mechanistic explanations.</p><div class="tags"><span class="tag">Interp</span><span class="tag">Mechanisms</span></div></article>
-          <article class="card area-card" data-reveal><span class="area-id">07</span><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M12 5v14"/></svg></div><h3>Governance interfaces</h3><p>Designing evidence formats that help teams, auditors, and institutions make informed deployment decisions.</p><div class="tags"><span class="tag">Policy</span><span class="tag">Governance</span></div></article>
-          <article class="card area-card" data-reveal style="--i:1;background:var(--surface-ink);color:var(--on-ink);border-color:var(--surface-ink)">
-            <span class="area-id" style="color:var(--orange-bright)">→</span>
-            <h3 style="color:var(--on-ink)">Explore the research program</h3>
-            <p style="color:#a99e8c">Read our domain briefs, methodology, and active investigations.</p>
-            <div class="tags" style="margin-top:auto"><a class="btn btn-sm btn-orange" href="research.html" style="margin-top:8px">Open research <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        <div class="grid grid-2 product-grid" role="list">
+          <article class="card product-card" data-reveal role="listitem">
+            <div class="product-top"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 3"/></svg></div><span class="status-badge status-beta">Private Beta</span></div>
+            <h3>Tensora Curious (TSC)</h3>
+            <p>Tensora Curious is the flagship AI assistant developed by Tensoramax Lab. It teaches, explains, reasons, codes, debugs, brainstorms, researches, writes, and helps solve difficult problems.</p>
+            <ul class="pill-list" aria-label="TSC capabilities">
+              <li>Coding Assistant</li><li>Research Companion</li><li>Writing Assistant</li><li>Learning Partner</li><li>Brainstorming</li><li>Debugging</li><li>Software Engineering</li><li>Open-source Friendly</li>
+            </ul>
+            <a class="link product-link" href="tsc.html">Learn about TSC →</a>
+          </article>
+
+          <article class="card product-card" data-reveal style="--i:1" role="listitem">
+            <div class="product-top"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16v12H4z"/><path d="M8 10h8M8 14h5"/></svg></div><span class="status-badge status-coming">Coming Soon</span></div>
+            <h3>Maku AI</h3>
+            <p>Maku AI is a creative workspace for thinking, writing, organizing, designing ideas, and boosting productivity across everyday workflows.</p>
+            <p class="muted">Focused on creativity, planning, and calm execution.</p>
+          </article>
+
+          <article class="card product-card" data-reveal role="listitem">
+            <div class="product-top"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M7 14l3-3 3 3 5-6"/></svg></div><span class="status-badge status-live">Available</span></div>
+            <h3>Tensoramax Benchmark Suite</h3>
+            <p>Transparent AI benchmarking built around reproducible scientific methodology and traceable reporting for engineering teams.</p>
+            <a class="link product-link" href="benchmark.html">Explore Benchmarks →</a>
+          </article>
+
+          <article class="card product-card" data-reveal style="--i:1" role="listitem">
+            <div class="product-top"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M3 12h18"/></svg></div><span class="status-badge status-active">Active</span></div>
+            <h3>Tensoramax Research</h3>
+            <p>Research papers, experiments, methodology, open science, evaluation reports, and responsible AI publications that power the product roadmap.</p>
+            <a class="link product-link" href="research.html">Read Research →</a>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ================= FEATURED RESEARCH ================= -->
-    <section class="section" id="featured">
-      <div class="container">
-        <div class="editorial reverse">
-          <div class="ed-text" data-reveal="left">
-            <span class="eyebrow">Featured investigation</span>
-            <h2>Calibration decay under distribution shift.</h2>
-            <p>Our latest study tracks how a model's confidence drifts from its accuracy the moment inputs leave the training distribution — a quiet failure that is rarely surfaced by headline benchmarks.</p>
-            <p>We evaluated 48 models across 12,480 probes and found confidence–accuracy gaps widening by an average of <strong>11.3 points</strong> under adversarial perturbation.</p>
-            <p style="margin-top:24px"><a class="link" href="papers.html">Read the full paper →</a></p>
-          </div>
-          <div class="ed-media" data-reveal="right" style="display:grid;place-items:center;padding:30px">
-            <svg viewBox="0 0 340 300" width="100%" aria-hidden="true">
-              <g stroke="#E7DDCB" stroke-width="1">
-                <line x1="40" y1="40" x2="40" y2="250"/><line x1="40" y1="250" x2="320" y2="250"/>
-                <line x1="40" y1="100" x2="320" y2="100" stroke-dasharray="3 4"/>
-                <line x1="40" y1="175" x2="320" y2="175" stroke-dasharray="3 4"/>
-              </g>
-              <path d="M40 80 Q120 95 180 140 T320 235" fill="none" stroke="#756B5E" stroke-width="2" stroke-dasharray="5 5"/>
-              <text x="300" y="225" font-family="JetBrains Mono,monospace" font-size="9" fill="#756B5E">accuracy</text>
-              <path d="M40 70 Q120 72 180 95 T320 120" fill="none" stroke="#C25A2C" stroke-width="2.5"/>
-              <text x="290" y="112" font-family="JetBrains Mono,monospace" font-size="9" fill="#C25A2C">confidence</text>
-              <g fill="#C25A2C"><circle cx="40" cy="70" r="3"/><circle cx="180" cy="95" r="3"/><circle cx="320" cy="120" r="3"/></g>
-              <text x="40" y="275" font-family="JetBrains Mono,monospace" font-size="9" fill="#9A8F7F">in-distribution</text>
-              <text x="250" y="275" font-family="JetBrains Mono,monospace" font-size="9" fill="#9A8F7F">→ shifted</text>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= BENCHMARK SNAPSHOT ================= -->
-    <section class="section-sm" id="benchmark">
-      <div class="container">
-        <div class="bench-snap" data-reveal>
-          <span class="eyebrow">The Tensoramax Benchmark</span>
-          <h2 style="margin-top:18px;max-width:20ch">The leaderboard models can't train to.</h2>
-          <p style="margin-top:16px;max-width:54ch">A living, adversarial evaluation suite across reasoning, coding, safety, multimodal understanding, and handwriting recognition — with full traceability for every score.</p>
-          <div class="bench-row">
-            <div class="bench-cell"><div class="v">48</div><div class="l">Models evaluated</div></div>
-            <div class="bench-cell"><div class="v">12,480</div><div class="l">Probes per suite</div></div>
-            <div class="bench-cell"><div class="v">11</div><div class="l">Evaluation axes</div></div>
-          </div>
-          <div style="margin-top:32px"><a class="btn btn-orange" href="benchmark.html">Open the dashboard
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= PAPERS PREVIEW ================= -->
-    <section class="section" id="papers">
+    <section class="section" id="coming-soon" style="background:var(--paper);border-block:1px solid var(--line)">
       <div class="container">
         <div class="split-head">
-          <div data-reveal><span class="eyebrow">Recent research</span><h2>Selected publications.</h2></div>
-          <div data-reveal style="--i:1"><p>Peer-style technical reports and preprints. Every artifact is reproducible from the linked code and data.</p></div>
+          <div data-reveal><span class="eyebrow">Coming soon</span><h2>Roadmap for the developer platform.</h2></div>
+          <div data-reveal style="--i:1"><p>We are expanding Tensoramax from products into a full ecosystem: comparison tools, workspace tooling, autonomous workflows, developer APIs, and multimodal systems.</p></div>
         </div>
-        <div data-reveal>
-          <a class="paper" href="papers.html"><span class="yr">2026</span><div><h3>Calibration Decay Under Distribution Shift</h3><p class="muted">A 48-model study quantifying how confidence–accuracy divergence compounds under adversarial prompts.</p></div><span class="arrow">↗</span></a>
-          <a class="paper" href="papers.html"><span class="yr">2025</span><div><h3>An Adversarial Handwriting Recognition Benchmark</h3><p class="muted">Introducing a crowdsourced, low-resource dataset and stress protocol for handwritten multimodal tasks.</p></div><span class="arrow">↗</span></a>
-          <a class="paper" href="papers.html"><span class="yr">2025</span><div><h3>Code-to-Talk: Measuring Explanatory Fidelity</h3><p class="muted">A protocol for scoring how faithfully models narrate the code they generate.</p></div><span class="arrow">↗</span></a>
+        <div class="grid grid-3 roadmap-grid" data-reveal>
+          <article class="card roadmap-card"><h3>Arena</h3><p>Multi-model comparison</p><span class="status-badge status-coming">Coming Soon</span></article>
+          <article class="card roadmap-card"><h3>Studio</h3><p>Developer workspace</p><span class="status-badge status-coming">Coming Soon</span></article>
+          <article class="card roadmap-card"><h3>Agents</h3><p>Autonomous AI workflows</p><span class="status-badge status-coming">Coming Soon</span></article>
+          <article class="card roadmap-card"><h3>APIs</h3><p>Developer platform</p><span class="status-badge status-coming">Coming Soon</span></article>
+          <article class="card roadmap-card"><h3>Vision</h3><p>Multimodal AI</p><span class="status-badge status-coming">Coming Soon</span></article>
         </div>
       </div>
     </section>
 
-    <!-- ================= DOCS CTA ================= -->
-    <section class="section-sm" id="docs">
+    <section class="section-sm" id="developer-value">
       <div class="container">
-        <div class="card" data-reveal style="display:flex;flex-wrap:wrap;gap:30px;align-items:center;justify-content:space-between;background:var(--cream-2)">
-          <div style="max-width:50ch"><span class="eyebrow">Documentation</span><h3 style="margin:12px 0 8px">Run the benchmark yourself.</h3><p class="muted">Methods, probe schemas, scoring weights, and replication instructions for independent validation.</p></div>
-          <a class="btn btn-primary" href="documentation.html">Read the docs
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M8 7h8M8 11h6"/></svg>
-          </a>
+        <div class="bench-snap" data-reveal>
+          <span class="eyebrow">Why developers care</span>
+          <h2 style="margin-top:18px;max-width:20ch">Practical tools backed by scientific evidence.</h2>
+          <p style="margin-top:16px;max-width:56ch">Tensoramax products combine workflow speed with transparent methodology, so your team can move quickly while still trusting outputs, reasoning traces, and evaluation quality.</p>
+          <div class="bench-row">
+            <div class="bench-cell"><div class="v">Today</div><div class="l">TSC private beta + benchmark suite</div></div>
+            <div class="bench-cell"><div class="v">Next</div><div class="l">Agents, APIs, studio, vision</div></div>
+            <div class="bench-cell"><div class="v">Built for</div><div class="l">Engineering + open-source teams</div></div>
+          </div>
+          <div style="margin-top:32px" class="flex flex-wrap gap-2"><a class="btn btn-orange" href="login.html">Sign up for private beta</a><a class="btn btn-ghost" href="tsc.html">See TSC roadmap</a></div>
         </div>
       </div>
     </section>
 
-    <!-- ================= ROADMAP ================= -->
-    <section class="section" id="roadmap" style="background:var(--paper);border-block:1px solid var(--line)">
-      <div class="container">
-        <div class="section-head" data-reveal><span class="eyebrow">Roadmap</span><h2>Where the laboratory is headed.</h2></div>
-        <div class="timeline" style="max-width:780px" data-reveal>
-          <div class="phase done"><div class="when">2024 · Q3</div><h3>Foundation of the probe suite</h3><p>Released the core evaluation harness, scoring methodology, and our first open dataset.</p></div>
-          <div class="phase done"><div class="when">2025 · Q2</div><h3>Public leaderboard launch</h3><p>Shipped the adversarial benchmark with handwriting and multimodal axes.</p></div>
-          <div class="phase"><div class="when">2026 · In progress</div><h3>Interpretability toolkit</h3><p>Open attribution and circuit-level tooling to pair with every score we publish.</p></div>
-          <div class="phase"><div class="when">2026 · Planned</div><h3>Multi-turn agentic safety suite</h3><p>Probes for tool-using, long-horizon agents — the next frontier of evaluation.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= CONTRIBUTORS ================= -->
-    <section class="section" id="contributors">
-      <div class="container">
-        <div class="section-head center" data-reveal><span class="eyebrow">The laboratory</span><h2>Researchers &amp; engineers.</h2></div>
-        <div class="contributors" data-reveal>
-          <div class="contributor"><div class="avatar" style="background:#C25A2C">Y</div><div class="nm">Yuri</div><div class="rl">yurivertical · Director, Safety</div></div>
-          <div class="contributor"><div class="avatar" style="background:#7C8B70">Y</div><div class="nm">Yuri</div><div class="rl">yurivertical · Benchmarking</div></div>
-          <div class="contributor"><div class="avatar" style="background:#5B6470">Y</div><div class="nm">Yuri</div><div class="rl">yurivertical · Evaluation Eng.</div></div>
-          <div class="contributor"><div class="avatar" style="background:#B5603F">Y</div><div class="nm">Yuri</div><div class="rl">yurivertical · Interpretability</div></div>
-          <div class="contributor"><div class="avatar" style="background:#CC7A1E">Y</div><div class="nm">Yuri</div><div class="rl">yurivertical · Multimodal</div></div>
-          <div class="contributor"><div class="avatar" style="background:#4E8A5A">Y</div><div class="nm">Yuri</div><div class="rl">yurivertical · Research Eng.</div></div>
-          <div class="contributor"><div class="avatar" style="background:#332E28">Y</div><div class="nm">Yuri</div><div class="rl">yurivertical · Policy &amp; Ethics</div></div>
-          <div class="contributor"><div class="avatar" style="background:#BE482F">Y</div><div class="nm">Yuri</div><div class="rl">yurivertical · Data Science</div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= FAQ ================= -->
     <section class="section" id="faq" style="background:var(--paper);border-block:1px solid var(--line)">
       <div class="container narrow">
         <div class="section-head" data-reveal><span class="eyebrow">Frequently asked</span><h2>Questions, answered directly.</h2></div>
         <div data-reveal>
-          <div class="faq-item"><button class="faq-q" aria-expanded="false">Is Tensoramax independent of any AI company? <span class="pm" aria-hidden="true"></span></button><div class="faq-a"><div class="inner">Yes. We are fully independent and publish methods that can be reproduced by third parties.</div></div></div>
-          <div class="faq-item"><button class="faq-q" aria-expanded="false">Can I reproduce your benchmark scores? <span class="pm" aria-hidden="true"></span></button><div class="faq-a"><div class="inner">Yes. Probe formats, prompts, and scoring logic are documented so teams can rerun evaluations.</div></div></div>
-          <div class="faq-item"><button class="faq-q" aria-expanded="false">How do you prevent models from gaming the leaderboard? <span class="pm" aria-hidden="true"></span></button><div class="faq-a"><div class="inner">We rotate adversarial probes and include hidden stress tests to reduce benchmark overfitting.</div></div></div>
-          <div class="faq-item"><button class="faq-q" aria-expanded="false">Is the research actually open? <span class="pm" aria-hidden="true"></span></button><div class="faq-a"><div class="inner">Methods and findings are public whenever safety constraints permit responsible release.</div></div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= LEGAL ================= -->
-    <section class="section-sm" id="legal">
-      <div class="container">
-        <div class="card" data-reveal style="display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between">
-          <div><span class="eyebrow">Legal &amp; governance</span><h3 style="margin:12px 0 6px">Terms, privacy, and our evaluation policy.</h3><p class="muted">How we handle data, license our work, and define benchmark governance safeguards.</p></div>
-          <a class="btn btn-ghost" href="legal.html">View legal
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
+          <div class="faq-item"><button class="faq-q" aria-expanded="false">What is Tensoramax Lab? <span class="pm" aria-hidden="true"></span></button><div class="faq-a"><div class="inner">Tensoramax Lab is an AI ecosystem company building practical products and open scientific infrastructure for developers, students, and research teams.</div></div></div>
+          <div class="faq-item"><button class="faq-q" aria-expanded="false">What is Tensora Curious? <span class="pm" aria-hidden="true"></span></button><div class="faq-a"><div class="inner">Tensora Curious (TSC) is our flagship assistant for coding, research, writing, debugging, and learning. It is currently in private beta.</div></div></div>
+          <div class="faq-item"><button class="faq-q" aria-expanded="false">What can I use today? <span class="pm" aria-hidden="true"></span></button><div class="faq-a"><div class="inner">You can explore the public Tensoramax Benchmark Suite today and join the TSC private beta waitlist through login.</div></div></div>
+          <div class="faq-item"><button class="faq-q" aria-expanded="false">Why should I sign up now? <span class="pm" aria-hidden="true"></span></button><div class="faq-a"><div class="inner">Early users get the fastest access to TSC updates, upcoming workspace features, and developer platform previews.</div></div></div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ================= FOOTER ================= -->
   <footer class="footer">
     <canvas class="footer-canvas" id="footer-network" aria-hidden="true"></canvas>
     <div class="container footer-inner">
@@ -340,11 +198,12 @@
             </svg>
             <span><span class="brand-name">Tensoramax</span><span class="brand-sub">Safety · Research Lab</span></span>
           </a>
-          <p class="footer-tag">An independent laboratory measuring the safety and limits of artificial intelligence — openly, and reproducibly.</p>
+          <p class="footer-tag">An independent laboratory building practical AI products and open scientific infrastructure for trustworthy intelligence.</p>
         </div>
+        <div><h5>Products</h5><ul><li><a href="tsc.html">Tensora Curious</a></li><li><a href="index.html#ecosystem">Maku AI</a></li><li><a href="benchmark.html">Benchmark Suite</a></li><li><a href="research.html">Research</a></li></ul></div>
         <div><h5>Research</h5><ul><li><a href="research.html">Areas</a></li><li><a href="papers.html">Papers</a></li><li><a href="benchmark.html">Benchmark</a></li><li><a href="documentation.html">Docs</a></li></ul></div>
         <div><h5>Lab</h5><ul><li><a href="about.html">About</a></li><li><a href="about.html#mission">Mission</a></li><li><a href="faq.html">FAQ</a></li><li><a href="legal.html">Legal</a></li></ul></div>
-        <div><h5>Connect</h5><ul><li><a href="https://github.com" target="_blank" rel="noopener">GitHub</a></li><li><a href="mailto:tensoramaxstudio@gmail.com">tensoramaxstudio@gmail.com</a></li></ul></div>
+        <div><h5>Connect</h5><ul><li><a href="login.html">Private beta login</a></li><li><a href="https://github.com" target="_blank" rel="noopener">GitHub</a></li><li><a href="mailto:tensoramaxstudio@gmail.com">tensoramaxstudio@gmail.com</a></li></ul></div>
       </div>
       <div class="footer-bottom">
         <span class="clock"><span class="live"></span> Lab time <span id="footer-clock">--:--:-- UTC</span></span>
